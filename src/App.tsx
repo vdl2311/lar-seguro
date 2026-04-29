@@ -1,6 +1,6 @@
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import {
   AlertTriangle,
   Moon,
@@ -19,6 +19,12 @@ import { Footer } from './components/Footer';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { CookieConsent } from './components/CookieConsent';
+
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) => (
   <motion.div
@@ -432,9 +438,25 @@ function Home() {
   );
 }
 
+function Tracking() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Rola para o topo quando a rota muda (opcional, mas bom pra UX)
+    window.scrollTo(0, 0);
+    // Dispara o evento PageView do Facebook
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'PageView');
+    }
+  }, [location]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <Tracking />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacidade" element={<Privacy />} />
