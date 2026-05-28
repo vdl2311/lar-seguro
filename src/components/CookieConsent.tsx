@@ -27,16 +27,16 @@ export function CookieConsent() {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="fixed bottom-0 left-0 right-0 z-[100] p-4 sm:p-6 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-sm pointer-events-none"
         >
-          <div className="bg-white border border-slate-200 shadow-2xl rounded-2xl p-6 pointer-events-auto flex flex-col gap-5 relative">
+          <div className="bg-warm-white border border-border-custom shadow-2xl rounded-2xl p-6 pointer-events-auto flex flex-col gap-5 relative">
             <div className="flex flex-col gap-2">
-              <h3 className="text-slate-900 font-bold text-[0.95rem] uppercase tracking-wider">Aviso de Cookies</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Nossa página utiliza cookies e tecnologias semelhantes para medir o desempenho, melhorar a sua experiência e personalizar o conteúdo que você vê. Ao continuar navegando neste site, você concorda plenamente com a nossa <Link to="/privacidade" className="text-blue-600 hover:text-blue-500 font-medium transition-colors">Política de Privacidade</Link> e o uso restrito dessas tecnologias.
+              <h3 className="text-text-dark font-bold text-[0.95rem] uppercase tracking-wider">Aviso de Cookies</h3>
+              <p className="text-text-mid text-sm leading-relaxed">
+                Nossa página utiliza cookies e tecnologias semelhantes para medir o desempenho, melhorar a sua experiência e personalizar o conteúdo que você vê. Ao continuar navegando neste site, você concorda plenamente com a nossa <Link to="/privacidade" className="text-accent hover:text-accent-mid font-medium transition-colors">Política de Privacidade</Link> e o uso restrito dessas tecnologias.
               </p>
             </div>
             <button
               onClick={handleAccept}
-              className="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+              className="w-full bg-text-dark hover:bg-black text-white font-medium py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
             >
               Concordar e Fechar
             </button>
