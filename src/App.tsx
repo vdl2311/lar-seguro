@@ -18,6 +18,7 @@ import {
 import { Footer } from './components/Footer';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
+import { Bridge } from './pages/Bridge';
 import { CookieConsent } from './components/CookieConsent';
 
 declare global {
@@ -26,7 +27,7 @@ declare global {
   }
 }
 
-const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) => (
+const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string; key?: any }) => (
   <motion.div
     initial={{ opacity: 0, y: 24 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -404,7 +405,7 @@ function Home() {
             <h2 className="font-serif text-3xl sm:text-5xl text-text-dark font-semibold leading-tight">Invista na segurança de quem você ama</h2>
           </FadeIn>
           <FadeIn className="max-w-xl mx-auto bg-warm-white border-2 border-border-dark-custom p-8 sm:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden text-center">
-            <div className="text-[0.7rem] font-bold uppercase tracking-widest text-accent mb-4">Ebook Digital — Acesso Vitalício</div>
+            <div className="text-[0.7rem] font-bold uppercase tracking-widest text-accent mb-4">Guia Digital — Acesso Vitalício</div>
             <p className="text-text-muted text-sm mb-6 uppercase tracking-wider">Lar Seguro, Vida Ativa — Guia Completo</p>
             <div className="font-serif text-6xl sm:text-7xl font-bold text-text-dark mb-4 flex items-start justify-center gap-1">
               <span className="text-2xl mt-4 font-semibold text-text-muted">R$</span>
@@ -464,7 +465,7 @@ function Home() {
           </FadeIn>
           <div className="space-y-4">
             {[
-              { q: "Como recebo o ebook?", a: "Após a confirmação do pagamento, você recebe um e-mail com o link para download imediato do arquivo PDF. O acesso é vitalício — você pode baixar quantas vezes quiser, a qualquer momento." },
+              { q: "Como recebo o guia?", a: "Após a confirmação do pagamento, você recebe um e-mail com o link para download imediato do arquivo PDF. O acesso é vitalício — você pode baixar quantas vezes quiser, a qualquer momento." },
               { q: "Precisa de reforma para aplicar as dicas?", a: "Não. A grande maioria das adaptações não exige obra nem profissional especializado. Coisas como remover tapetes, reorganizar a cozinha e instalar balizadores de LED não custam nada ou custam muito pouco." },
               { q: "Funciona para idosos que usam andador?", a: "Sim. O guia inclui medidas mínimas de circulação para andadores e orientações específicas sobre espaçamento em áreas críticas como o banheiro." },
               { q: "Como funciona a garantia incondicional?", a: "Se por qualquer motivo você não ficar satisfeito com o guia em até 7 dias após a compra, enviamos o reembolso total sem perguntas e sem burocracia." }
@@ -531,7 +532,10 @@ export default function App() {
     <BrowserRouter>
       <Tracking />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Bridge />} />
+        <Route path="/venda" element={<Home />} />
+        <Route path="/bridge" element={<Bridge />} />
+        <Route path="/bidge" element={<Bridge />} />
         <Route path="/privacidade" element={<Privacy />} />
         <Route path="/termos" element={<Terms />} />
       </Routes>

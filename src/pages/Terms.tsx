@@ -30,7 +30,7 @@ export function Terms() {
             <p>Este termo possui como finalidade regulamentar o uso e as diretrizes relacionadas à aquisição do material digital (Guia em PDF) comercializado diretamente pela nossa página. O material tem cunho educacional e informativo.</p>
 
             <h2 className="text-xl font-bold text-text-dark mt-8 mb-4 font-serif">2. Direitos de Propriedade Intelectual</h2>
-            <p>Todo o conteúdo deste site, do Ebook oferecido, bônus, textos, vídeos, layouts, sistemas e afins, pertencem aos autores e são protegidos pelas leis de Direitos Autorais internacionais e nacionais. É estritamente proibida qualquer forma de pirataria, distribuição não autorizada, compartilhamento gratuito, plágio, reprodução mecânica ou revenda indevida.</p>
+            <p>Todo o conteúdo deste site, do material digital oferecido, bônus, textos, vídeos, layouts, sistemas e afins, pertencem aos autores e são protegidos pelas leis de Direitos Autorais internacionais e nacionais. É estritamente proibida qualquer forma de pirataria, distribuição não autorizada, compartilhamento gratuito, plágio, reprodução mecânica ou revenda indevida.</p>
             <p>A compra garante acesso individual e de uso pessoal ("uma licença") para consumir as informações, não garantindo de forma alguma autorização de uso comercial ou de replicação do conhecimento para lucro próprio.</p>
 
             <h2 className="text-xl font-bold text-text-dark mt-8 mb-4 font-serif">3. Isenção de Responsabilidade</h2>
